@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <form>
+            <div class="mb-3">
+              <label for="fecha">Fecha:</label>
+              <input type="datetime-local" id="fecha" name="fecha" class="form-control form-control-lg" placeholder="Fecha" [(ngModel)]="cita.fechaHoraCita" name="fechaHoraCita">
+            </div>
+
+            <div class="mb-3">
+              <label for="motivo">Motivo:</label>
+              <input type="text" id="motivo" name="motivo" class="form-control form-control-lg" placeholder="Motivo" [(ngModel)]="cita.motivo" name="motivo">
+            </div>
+
+            <div class="mb-3">
+              <label for="medicoAsignado">Médico Asignado:</label>
+              <input type="text" id="medicoAsignado" name="medicoAsignado" class="form-control form-control-lg" placeholder="Médico Asignado" [(ngModel)]="cita.medicoAsignado" name="medicoAsignado">
+            </div>
+
+            <div class="mb-3">
+              <label for="estado">Estado:</label>
+              <input type="text" id="estado" name="estado" class="form-control form-control-lg" placeholder="Estado" [(ngModel)]="cita.estado" name="estado">
+            </div>
+
+            <div class="mb-3">
+              <label for="idPaciente">Paciente:</label>
+              <select id="idPaciente" name="idPaciente" class="form-control form-control-lg" [(ngModel)]="cita.pacienteId" name="pacienteId">
+                <option *ngFor="let paciente of pacientes" [value]="paciente.id">{{ paciente.nombre }}</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <button type="button" (click)="actualizarCita()" class="btn btn-danger">ACEPTAR</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
